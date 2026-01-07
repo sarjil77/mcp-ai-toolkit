@@ -5,15 +5,15 @@ from typing import List, Dict, Any, Optional
 from mcp.server.fastmcp import FastMCP
 
 
-mcp = FastMCP("asureitfy")
+mcp = FastMCP("insurance")
 
-# Configuration for Asureitfy API
-ASUREITFY_BASE_URL = "API to put here"
+# Configuration for insurance API
+insurance_BASE_URL = "API to put here"
 API_KEY = "img"
 
-def upload_pdf_to_asureitfy(file_path: str) -> Dict[str, Any]:
+def upload_pdf_to_insurance(file_path: str) -> Dict[str, Any]:
     """
-    Upload a PDF file to the Asureitfy API for processing
+    Upload a PDF file to the insurance API for processing
     """
     try:
         # Check if file exists
@@ -31,7 +31,7 @@ def upload_pdf_to_asureitfy(file_path: str) -> Dict[str, Any]:
             }
             
             # Make POST request to the API
-            response = requests.post(ASUREITFY_BASE_URL, files=files)
+            response = requests.post(insurance_BASE_URL, files=files)
             response.raise_for_status()
             
             return response.json()
@@ -48,7 +48,7 @@ def upload_pdf_to_asureitfy(file_path: str) -> Dict[str, Any]:
 @mcp.tool()
 def process_insurance_certificate(file_path: str) -> Dict[str, Any]:
     """
-    Process an insurance certificate PDF file using Asureitfy API
+    Process an insurance certificate PDF file using insurance API
     
     Args:
         file_path: Absolute path to the PDF file to process
@@ -63,7 +63,7 @@ def process_insurance_certificate(file_path: str) -> Dict[str, Any]:
         - Description of operation
         - Success status
     """
-    result = upload_pdf_to_asureitfy(file_path)
+    result = upload_pdf_to_insurance(file_path)
     return result
 
 @mcp.tool()
@@ -77,7 +77,7 @@ def get_certificate_holder_info(file_path: str) -> Dict[str, Any]:
     Returns:
         Certificate holder information (name, address, city, state, zip code)
     """
-    result = upload_pdf_to_asureitfy(file_path)
+    result = upload_pdf_to_insurance(file_path)
     if result.get("Success") == "True":
         return result.get("CertificateHolder", {})
     else:
@@ -94,7 +94,7 @@ def get_coverage_details(file_path: str) -> List[Dict[str, Any]]:
     Returns:
         List of coverage details including limits, policy info, and endorsements
     """
-    result = upload_pdf_to_asureitfy(file_path)
+    result = upload_pdf_to_insurance(file_path)
     if result.get("Success") == "True":
         return result.get("Coverages", [])
     else:
@@ -111,7 +111,7 @@ def get_insured_information(file_path: str) -> Dict[str, Any]:
     Returns:
         Insured party information (name, address, city, state, zip code, phone)
     """
-    result = upload_pdf_to_asureitfy(file_path)
+    result = upload_pdf_to_insurance(file_path)
     if result.get("Success") == "True":
         return result.get("Insured", {})
     else:
@@ -128,7 +128,7 @@ def get_producer_information(file_path: str) -> Dict[str, Any]:
     Returns:
         Producer information (name, address, phone, email, fax)
     """
-    result = upload_pdf_to_asureitfy(file_path)
+    result = upload_pdf_to_insurance(file_path)
     if result.get("Success") == "True":
         return result.get("Producer", {})
     else:
@@ -145,7 +145,7 @@ def validate_certificate_signature(file_path: str) -> Dict[str, Any]:
     Returns:
         Information about certificate signature status
     """
-    result = upload_pdf_to_asureitfy(file_path)
+    result = upload_pdf_to_insurance(file_path)
     if result.get("Success") == "True":
         return {
             "signed": result.get("Signed", "No"),

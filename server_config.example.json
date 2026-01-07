@@ -26,13 +26,13 @@
                 "servers/research_server.py"
             ]
         },
-        "asureitfy": {
+        "insurance": {
             "command": "uv",
             "args": [
                 "--directory",
                 "/path/to/mcp-ai-toolkit/",
                 "run",
-                "servers/asureitfy_server.py"
+                "servers/insurance_server.py"
             ]
         },
         "fetch": {

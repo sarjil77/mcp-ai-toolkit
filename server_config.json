@@ -26,13 +26,13 @@
                 "servers/research_server.py"
             ]
         },
-        "asureitfy": {
+        "insurance": {
             "command": "/home/sarjil/.local/bin/uv",
             "args": [
                 "--directory",
                 "/home/sarjil/MCP/",
                 "run",
-                "servers/asureitfy_server.py"
+                "servers/insurance_server.py"
             ]
         },
         "fetch": {

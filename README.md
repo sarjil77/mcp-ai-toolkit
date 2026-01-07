@@ -29,7 +29,7 @@ MCP AI Toolkit is a collection of specialized MCP servers that extend AI assista
 
 | Server | Description | Key Capabilities |
 |--------|-------------|------------------|
-| 🔐 **Asureitfy** | Insurance Certificate Processing | PDF extraction, coverage analysis, signature validation |
+| 🔐 **insurance** | Insurance Certificate Processing | PDF extraction, coverage analysis, signature validation |
 | 📚 **Research** | Academic Paper Management | ArXiv search, paper storage, research synthesis |
 | 📊 **Content Aggregator** | Market Intelligence | Job market analysis, industry trends, competitive intelligence |
 | 🧠 **Decision Engine** | AI-Powered Decision Support | Career analysis, strategic planning, priority ranking |
@@ -48,13 +48,13 @@ MCP AI Toolkit is a collection of specialized MCP servers that extend AI assista
 ┌─────────────────────────────────────────────────────────────────┐
 │                         MCP Server Layer                         │
 ├──────────┬──────────┬──────────┬──────────┬──────────┬──────────┤
-│Asureitfy │ Research │ Content  │ Decision │Monitoring│ WhatsApp │
+│insurance │ Research │ Content  │ Decision │Monitoring│ WhatsApp │
 │ Server   │  Server  │Aggregator│  Engine  │ & Alerts │  Server  │
 └──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
      │           │          │          │          │          │
      ▼           ▼          ▼          ▼          ▼          ▼
 ┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
-│Asureitfy │  ArXiv   │  Market  │ Analysis │  News &  │ WhatsApp │
+│insurance │  ArXiv   │  Market  │ Analysis │  News &  │ WhatsApp │
 │   API    │   API    │   Data   │ Engines  │ Job APIs │  Bridge  │
 └──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
 ```
@@ -88,9 +88,9 @@ Add the following to your Claude Desktop MCP configuration (`~/.config/claude/cl
 ```json
 {
   "mcpServers": {
-    "asureitfy": {
+    "insurance": {
       "command": "uv",
-      "args": ["--directory", "/path/to/mcp-ai-toolkit", "run", "servers/asureitfy_server.py"]
+      "args": ["--directory", "/path/to/mcp-ai-toolkit", "run", "servers/insurance_server.py"]
     },
     "research": {
       "command": "uv",
@@ -114,9 +114,9 @@ Add the following to your Claude Desktop MCP configuration (`~/.config/claude/cl
 
 ## 🔧 Servers
 
-### 🔐 Asureitfy Server
+### 🔐 insurance Server
 
-Processes insurance certificate PDFs using the Asureitfy API to extract structured data.
+Processes insurance certificate PDFs using the insurance API to extract structured data.
 
 **Tools:**
 | Tool | Description |
@@ -286,13 +286,13 @@ asyncio.run(main())
 
 ## 🎬 Demo: Insurance Certificate Processing
 
-A powerful demo showcasing the Asureitfy server with WhatsApp integration:
+A powerful demo showcasing the insurance server with WhatsApp integration:
 
 ### Scenario
 Automated insurance certificate verification with mobile alerts.
 
 ### Flow
-1. **Upload PDF** → Asureitfy extracts structured data
+1. **Upload PDF** → insurance extracts structured data
 2. **Validate Coverage** → Check limits and expiration dates
 3. **Send Alert** → WhatsApp notification with results
 
@@ -318,7 +318,7 @@ else:
 ```
 mcp-ai-toolkit/
 ├── servers/                     # MCP Server implementations
-│   ├── asureitfy_server.py      # Insurance certificate processing
+│   ├── insurance_server.py      # Insurance certificate processing
 │   ├── research_server.py       # Academic research management
 │   ├── content_aggregator_server.py  # Market intelligence
 │   ├── decision_engine_server.py     # Decision support

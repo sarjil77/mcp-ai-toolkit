@@ -6,7 +6,7 @@ Detailed documentation for each MCP server in the toolkit.
 
 ## Table of Contents
 
-1. [Asureitfy Server](#asureitfy-server)
+1. [insurance Server](#insurance-server)
 2. [Research Server](#research-server)
 3. [Content Aggregator Server](#content-aggregator-server)
 4. [Decision Engine Server](#decision-engine-server)
@@ -15,14 +15,14 @@ Detailed documentation for each MCP server in the toolkit.
 
 ---
 
-## Asureitfy Server
+## insurance Server
 
-**File:** `servers/asureitfy_server.py`
-**MCP Name:** `asureitfy`
+**File:** `servers/insurance_server.py`
+**MCP Name:** `insurance`
 
 ### Purpose
 
-Processes insurance certificate PDFs using the Asureitfy API to extract structured data for compliance verification and document management.
+Processes insurance certificate PDFs using the insurance API to extract structured data for compliance verification and document management.
 
 ### API Configuration
 

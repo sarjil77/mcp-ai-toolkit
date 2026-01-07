@@ -63,9 +63,9 @@ Add the MCP servers to your Claude Desktop configuration:
 ```json
 {
   "mcpServers": {
-    "asureitfy": {
+    "insurance": {
       "command": "uv",
-      "args": ["--directory", "/path/to/mcp-ai-toolkit", "run", "servers/asureitfy_server.py"]
+      "args": ["--directory", "/path/to/mcp-ai-toolkit", "run", "servers/insurance_server.py"]
     },
     "research": {
       "command": "uv",
@@ -133,8 +133,8 @@ You can test if servers are working by running them directly:
 # Test research server
 uv run servers/research_server.py
 
-# Test asureitfy server
-uv run servers/asureitfy_server.py
+# Test insurance server
+uv run servers/insurance_server.py
 ```
 
 ### Test with Claude

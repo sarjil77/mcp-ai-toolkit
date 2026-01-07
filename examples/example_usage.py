@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Example usage of the Asureitfy MCP Server
+Example usage of the insurance MCP Server
 This demonstrates how to use the server to process insurance certificate PDFs
 """
 
@@ -11,7 +11,7 @@ import os
 # Add the parent directory to the path so we can import from servers
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-from servers.asureitfy_server import (
+from servers.insurance_server import (
     process_insurance_certificate,
     get_certificate_holder_info,
     get_coverage_details,
@@ -24,7 +24,7 @@ def main():
     # Example PDF file path - replace with your actual PDF file
     pdf_file_path = "/path/to/your/insurance_certificate.pdf"
     
-    print("=== Asureitfy MCP Server Example ===\n")
+    print("=== insurance MCP Server Example ===\n")
     
     # 1. Process the full certificate
     print("1. Processing full insurance certificate...")
