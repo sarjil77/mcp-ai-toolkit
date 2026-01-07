@@ -3,18 +3,25 @@ import os
 import requests
 from typing import List, Dict, Any, Optional
 from mcp.server.fastmcp import FastMCP
+from dotenv import load_dotenv
 
+# Load environment variables
+load_dotenv()
 
 mcp = FastMCP("insurance")
 
-# Configuration for insurance API
-insurance_BASE_URL = "API to put here"
+# Configuration for insurance API - set via environment variable
+INSURANCE_API_URL = os.getenv("INSURANCE_API_URL", "")
 API_KEY = "img"
 
 def upload_pdf_to_insurance(file_path: str) -> Dict[str, Any]:
     """
     Upload a PDF file to the insurance API for processing
     """
+    # Check if API URL is configured
+    if not INSURANCE_API_URL:
+        return {"error": "INSURANCE_API_URL not configured. Please set it in .env file", "Success": "False"}
+    
     try:
         # Check if file exists
         if not os.path.exists(file_path):
@@ -31,7 +38,7 @@ def upload_pdf_to_insurance(file_path: str) -> Dict[str, Any]:
             }
             
             # Make POST request to the API
-            response = requests.post(insurance_BASE_URL, files=files)
+            response = requests.post(INSURANCE_API_URL, files=files)
             response.raise_for_status()
             
             return response.json()

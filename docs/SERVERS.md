@@ -22,14 +22,14 @@ Detailed documentation for each MCP server in the toolkit.
 
 ### Purpose
 
-Processes insurance certificate PDFs using the insurance API to extract structured data for compliance verification and document management.
+Processes insurance certificate PDFs using a configurable API to extract structured data for compliance verification and document management.
 
 ### API Configuration
 
-- **Base URL:** `https://staging-openai-endorsement-acc-api.injalaone.com`
+- **Base URL:** Configure in `.env` file or directly in the server
 - **Method:** POST
 - **File Key:** `img`
-- **Authentication:** None required
+- **Authentication:** Depends on your API provider
 
 ### Tools
 

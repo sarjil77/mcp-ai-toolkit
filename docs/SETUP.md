@@ -29,7 +29,7 @@ Download and install [Claude Desktop](https://claude.ai/download) for using MCP 
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/mcp-ai-toolkit.git
+git clone https://github.com/sarjil77/mcp-ai-toolkit.git
 cd mcp-ai-toolkit
 ```
 
