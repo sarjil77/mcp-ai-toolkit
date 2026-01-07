@@ -1,0 +1,72 @@
+{
+    "mcpServers": {
+        "whatsapp": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "/path/to/mcp-ai-toolkit/whatsapp-mcp/whatsapp-mcp-server/",
+                "run",
+                "main.py"
+            ]
+        },
+        "filesystem": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-filesystem",
+                "."
+            ]
+        },
+        "research": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "/path/to/mcp-ai-toolkit/",
+                "run",
+                "servers/research_server.py"
+            ]
+        },
+        "asureitfy": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "/path/to/mcp-ai-toolkit/",
+                "run",
+                "servers/asureitfy_server.py"
+            ]
+        },
+        "fetch": {
+            "command": "uvx",
+            "args": [
+                "mcp-server-fetch"
+            ]
+        },
+        "content-aggregator": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "/path/to/mcp-ai-toolkit/",
+                "run",
+                "servers/content_aggregator_server.py"
+            ]
+        },
+        "monitoring-alerts": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "/path/to/mcp-ai-toolkit/",
+                "run",
+                "servers/monitoring_server.py"
+            ]
+        },
+        "decision-engine": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "/path/to/mcp-ai-toolkit/",
+                "run",
+                "servers/decision_engine_server.py"
+            ]
+        }
+    }
+}
